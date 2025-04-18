@@ -24,10 +24,16 @@ document.body.appendChild(newParagraph);
 
 //  4. Напиши функцию, которая удаляет элемент 
 //     с указанным ID из документа;
+function removeElementById(elementId) {
+    if(!elementId) {
+    return console.error("ошибка в id")
+    }
+    
+const elementToRemove = document.getElementById(elementId);
+elementToRemove.parentNode.removeChild(elementToRemove);
 
-const removeMe = document.getElementById('removeMe');
-removeMe.parentNode.removeChild(removeMe);
-
+}
+removeElementById('remove-me')
 
 //  5. Измени атрибут ссылки на новый URL 
 //     и выведи его значение в консоль;
@@ -58,3 +64,4 @@ const replacement = document.getElementById('some-link');
 replacement.classList.toggle('replacement');
 
 console.log(replacement);
+
